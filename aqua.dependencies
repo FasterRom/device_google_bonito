@@ -1,17 +1,17 @@
 [
  {
-   "repository":  "Aqua-devices/android_device_google_bonito-sepolicy",
-   "target_path": "device/google/bonito-sepolicy",
-   "branch":      "a9"
+   "repository":	"Aqua-devices/device_google_bonito-sepolicy",
+   "target_path":	"device/google/bonito-sepolicy",
+   "branch":		"a9"
  },
  {
-   "repository":  "Aqua-devices/android_kernel_google_bonito",
-   "target_path": "kernel/google/bonito",
-   "branch":      "a9"
+   "repository":	"Aqua-devices/kernel_google_bonito",
+   "target_path":	"kernel/google/bonito",
+   "branch":		"a9"
  },
  {
-   "repository":  "Aqua-devices/android_vendor_google",
-   "target_path": "vendor/google",
-   "branch":      "a9"
+   "repository":	"Aqua-devices/proprietary_vendor_google",
+   "target_path":	"vendor/google",
+   "branch":		"a9"
  }
 ]
