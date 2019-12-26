@@ -1,13 +1,13 @@
 [
   {
     "remote":       "github",
-    "repository":   "device_google_bonito-sepolicy",
+    "repository":   "FasterRom/device_google_bonito-sepolicy",
     "target_path":  "device/google/bonito-sepolicy",
     "branch":       "ten"
   },
   {
     "remote":       "github",
-    "repository":   "kernel_google_bluecross",
+    "repository":   "FasterRom/kernel_google_bluecross",
     "target_path":  "kernel/google/bluecross",
     "branch":       "x"
   },
