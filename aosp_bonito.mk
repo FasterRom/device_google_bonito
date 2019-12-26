@@ -1,5 +1,5 @@
 #
-# Copyright 2016 The Android Open Source Project
+# Copyright 2019 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,30 +14,37 @@
 # limitations under the License.
 #
 
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
+# Inherit some common PixelExperience stuff.
+TARGET_BOOT_ANIMATION_RES := 1440
+TARGET_GAPPS_ARCH := arm64
+TARGET_INCLUDE_STOCK_ARCORE := true
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/mainline.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-$(call inherit-product, device/google/bonito/device-bonito.mk)
-$(call inherit-product-if-exists, vendor/google_devices/bonito/proprietary/device-vendor.mk)
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.ringtone=Ring_Synth_04.ogg \
-    ro.com.android.dataroaming=true \
-
-PRODUCT_PACKAGES += \
-    PhotoTable \
-    WallpaperPicker \
-    WAPPushManager \
-
-# STOPSHIP deal with Qualcomm stuff later
-# PRODUCT_RESTRICT_VENDOR_FILES := all
-
-PRODUCT_MANUFACTURER := Google
-PRODUCT_BRAND := Android
+# Bonito device descriptor
 PRODUCT_NAME := aosp_bonito
 PRODUCT_DEVICE := bonito
-PRODUCT_MODEL := AOSP on bonito
+PRODUCT_BRAND := Google
+PRODUCT_MODEL := Pixel 3a XL
+PRODUCT_MANUFACTURER := Google
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME="bonito" \
+    TARGET_DEVICE="bonito" \
+    PRIVATE_BUILD_DESC="bonito-user 10 QQ1A.191205.011 6009058 release-keys"
+
+BUILD_FINGERPRINT := "google/bonito/bonito:10/QQ1A.191205.011/6009058:user/release-keys"
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.fingerprint=google/bonito/bonito:10/QQ1A.191205.011/6009058:user/release-keys
+
+BOARD_PREBUILT_VENDORIMAGE := vendor/images/bonito/vendor.img
