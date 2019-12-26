@@ -1,0 +1,32 @@
+[
+  {
+    "remote":       "github",
+    "repository":   "device_google_bonito-sepolicy",
+    "target_path":  "device/google/bonito-sepolicy",
+    "branch":       "ten"
+  },
+  {
+    "remote":       "github",
+    "repository":   "kernel_google_bluecross",
+    "target_path":  "kernel/google/bluecross",
+    "branch":       "x"
+  },
+  {
+    "repository": "android_packages_resources_devicesettings",
+    "target_path": "packages/resources/devicesettings",
+    "branch": "lineage-17.0",
+    "remote": "lineage"
+  },
+  {
+    "repository": "packages_apps_PixelLiveWallpaper",
+    "target_path": "packages/apps/PixelLiveWallpaper",
+    "branch": "ten",
+    "remote": "pixel-gitlab"
+  },
+  {
+    "repository": "DirtyUnicorns/android_vendor_images",
+    "target_path": "vendor/images",
+    "branch": "q10x",
+    "remote": "gitlab"
+  }
+]
